@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gz_static">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="gz_static"
         android:name="${applicationName}"
