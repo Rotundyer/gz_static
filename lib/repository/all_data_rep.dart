@@ -1,8 +1,3 @@
-import 'dart:convert';
-import 'dart:async';
-
-import 'package:http/http.dart' as http;
-
 class Data {
   final String dateToday;
   final Sunset sunset;
@@ -19,7 +14,7 @@ class Sunset {
   final int number;
   final String date;
   final String planet;
-  final String sp;
+  final bool sp;
   final String mission;
   final int party;
   final Players players;

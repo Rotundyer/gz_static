@@ -26,8 +26,8 @@ class _SplashScreenState extends State<SplashScreen> {
               1
             ],
                 colors: [
-              CustomColors.black_grey_blue,
-              CustomColors.light_blue,
+              CustomColors.dark_purple,
+              CustomColors.light_purple,
               CustomColors.turquoise
             ])),
         child: Column(
@@ -35,29 +35,23 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Container(),
             Container(
-              width: getScreenWidth(context) / 2.7,
-              height: getScreenWidth(context) * 1.14,
-              // height: 100,
-              // child: Image.asset('images/logo.png', width: 100.0, height: 100.0,),
-              child: const Image(
-                image: AssetImage('assets/images/logo.png'),
-              ),
-            ),
+                width: getScreenWidth(context) / 2.7,
+                height: getScreenWidth(context) * 1.14,
+                child: Image.asset('assets/images/logo.png')),
             Container(
               margin: const EdgeInsets.only(right: 25, left: 25, bottom: 25),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary: CustomColors.black_50,
                     minimumSize: const Size.fromHeight(70)),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/second');
-                },
-                child: Text(AppLocalizations.of(context)!.start,
-                style: const TextStyle(
-                  fontSize: 20,
-                  color: CustomColors.white,
-                  fontFamily: 'Nunito'
-                ),),
+                onPressed: () => Navigator.pushNamed(context, 'menu'),
+                child: Text(
+                  AppLocalizations.of(context)!.start,
+                  style: const TextStyle(
+                      fontSize: 20,
+                      color: CustomColors.white,
+                      fontFamily: 'Nurito'),
+                ),
               ),
             )
           ],

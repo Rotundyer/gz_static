@@ -1,3 +1,9 @@
 {
-  "start" : "start"
+  "start" : "Start",
+  "exit" : "EXIT",
+  "sunsets" : "Sunsets",
+  "statistics" : "Statistics",
+  "planet" : "Planet",
+  "resources": "Resources",
+  "date" : "Date"
 }

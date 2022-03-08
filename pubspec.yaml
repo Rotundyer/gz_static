@@ -11,6 +11,8 @@ dependencies:
   http: ^0.13.4
   flutter_svg: ^0.22.0
   cupertino_icons: ^1.0.2
+  provider: ^3.0.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -22,13 +24,24 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
-  assets:
-    - assets/images/logo.png
 
   fonts:
     - family: Nunito
       fonts:
         - asset: assets/fonts/Nunito-SemiBold.ttf
+    - family: Nunito_bold
+      fonts:
+        - asset: assets/fonts/Nunito-Bold.ttf
+    - family: Nunito_extra_bold
+      fonts:
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
+
+  assets:
+    - assets/images/logo.png
+    - assets/images/arrow_left.png
+    - assets/images/logotype.png
+    - assets/images/arrow_right_purple.png
+
   # fonts:
   #   - family: Schyler
   #     fonts:

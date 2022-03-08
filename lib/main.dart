@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gz_static/splash_screen/splashScreen.dart';
+import 'package:gz_static/view/personalSunset.dart';
+import 'package:gz_static/view/splashScreen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'menu.dart';
-
-// void main() {
-//   runApp(const MyApp());
-// }
+import 'package:gz_static/view/sunsets.dart';
+import 'view/menu.dart';
 
 void main() => runApp(MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -15,6 +13,8 @@ void main() => runApp(MaterialApp(
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
-        '/second': (context) => const MenuApp()
+        'menu': (context) => const Menu(),
+        'sunsets': (context) => const Sunsets(),
+        'personal sunset': (context) => const PersonalSunset(),
       },
     ));

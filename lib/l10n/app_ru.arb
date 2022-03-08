@@ -1,6 +1,9 @@
 {
   "start" : "Начать",
-  "@start" : {
-    "description": "Кнопка на первом экране"
-  }
+  "exit" : "ВЫЙТИ",
+  "sunsets" : "Заходы",
+  "statistics" : "Статистика",
+  "planet" : "Планета",
+  "resources": "Ресурсы",
+  "date" : "Дата"
 }
