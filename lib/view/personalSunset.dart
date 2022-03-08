@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gz_static/view/app_bar.dart';
+import 'package:gz_static/provider/mainProvider.dart';
 
 class PersonalSunset extends StatefulWidget {
   const PersonalSunset({Key? key}) : super(key: key);
@@ -13,6 +14,9 @@ class _PersonalSunsetState extends State<PersonalSunset> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(height: 70),
+      body: Center(
+        child: Text(""),
+      ),
     );
   }
 }

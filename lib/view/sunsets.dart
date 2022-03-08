@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gz_static/units/units.dart';
@@ -35,16 +37,22 @@ class _SunsetsState extends State<Sunsets> {
             return ListView.builder(
                 itemCount: snapshot.data!.sunset.length,
                 itemBuilder: (context, position) {
+                  print(snapshot.data!.sunset[position].number);
                   return CardSunset(
                     planet: snapshot.data!.sunset[position].planet,
                     resources: snapshot.data!.sunset[position].resources,
                     date: snapshot.data!.sunset[position].date,
+                    number: snapshot.data!.sunset[position].number,
                   );
                 });
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
-          return const CircularProgressIndicator();
+          return const Center(
+            child: CircularProgressIndicator(
+              color: CustomColors.light_purple,
+            ),
+          );
         },
       ),
     );
@@ -56,11 +64,13 @@ class CardSunset extends StatelessWidget {
       {Key? key,
       required this.planet,
       required this.resources,
-      required this.date})
+      required this.date,
+      required this.number})
       : super(key: key);
   final String planet;
   final List<String> resources;
   final String date;
+  final int number;
 
   @override
   Widget build(BuildContext context) {
