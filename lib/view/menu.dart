@@ -26,7 +26,7 @@ class _MenuState extends State<Menu> {
               text: AppLocalizations.of(context)!.sunsets,
             ),
             LightButton(
-              routeName: "",
+              routeName: "statistics",
               text: AppLocalizations.of(context)!.statistics,
             )
           ],
