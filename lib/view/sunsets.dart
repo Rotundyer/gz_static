@@ -37,6 +37,7 @@ class _SunsetsState extends State<Sunsets> {
             return ListView.builder(
                 itemCount: snapshot.data!.sunset.length,
                 itemBuilder: (context, position) {
+                  print(snapshot.data!.sunset[position].number);
                   return CardSunset(
                     planet: snapshot.data!.sunset[position].planet,
                     resources: snapshot.data!.sunset[position].resources,

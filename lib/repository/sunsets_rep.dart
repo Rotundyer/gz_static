@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 Future<Record> getRecordJson() async {
   final response = await http.get(
-      Uri.parse('https://api.jsonbin.io/v3/b/62278bc7a703bb6749255efb/latest'),
+      Uri.parse('https://api.jsonbin.io/v3/b/6227f6c0061827674370e775/latest'),
       headers: header);
 
   if (response.statusCode == 200) {
