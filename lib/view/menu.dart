@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gz_static/view/app_bar.dart';
+import 'package:gz_static/view/widgets/app_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:gz_static/view/light_button.dart';
+import 'package:gz_static/view/widgets/light_button.dart';
 
 import '../assets/CustomColors.dart';
 
-class Menu extends StatefulWidget {
+class Menu extends StatelessWidget {
   const Menu({Key? key}) : super(key: key);
 
-  @override
-  _MenuState createState() => _MenuState();
-}
-
-class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,9 +1,21 @@
 {
   "start" : "Начать",
-  "exit" : "ВЫЙТИ",
+  "exit" : "выйти",
   "sunsets" : "Заходы",
   "statistics" : "Статистика",
   "planet" : "Планета",
   "resources": "Ресурсы",
-  "date" : "Дата"
+  "date" : "Дата",
+  "data_not_found" : "Данные не найдены",
+  "mission" : "Миссия",
+  "sp" : "сп",
+  "yes" : "да",
+  "no" : "нет",
+  "player1" : "игрок 1",
+  "player2" : "игрок 2",
+  "player3" : "игрок 3",
+  "player4" : "игрок 4",
+  "total" : "итог",
+  "mission_time" : "Время миссии (мин)",
+  "unit_of_resource" : "ед. рес-а/\n10 мин"
 }

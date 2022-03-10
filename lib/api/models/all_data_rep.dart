@@ -1,12 +1,14 @@
-class Data {
+class RecordAllData {
   final String dateToday;
-  final Sunset sunset;
+  final List<Sunset> sunset;
 
-  const Data({required this.dateToday, required this.sunset});
+  const RecordAllData({required this.dateToday, required this.sunset});
 
-  factory Data.fromJson(Map<String, dynamic> json) {
-    return Data(
-        dateToday: json['date_today'], sunset: Sunset.fromJson(json['sunset']));
+  factory RecordAllData.fromJson(Map<String, dynamic> json) {
+    return RecordAllData(
+        dateToday: json['date_today'],
+        sunset:
+            List<Sunset>.from(json['sunset'].map((e) => Sunset.fromJson(e))));
   }
 }
 
@@ -40,7 +42,7 @@ class Sunset {
         sp: json['sp'],
         mission: json['mission'],
         party: json['party'],
-        players: Players.fromJson(json['party']),
+        players: Players.fromJson(json['players']),
         timeFarm: json['time_farm'],
         resources: List<Resource>.from(
             json['resources'].map((e) => Resource.fromJson(e))));

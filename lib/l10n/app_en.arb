@@ -1,9 +1,21 @@
 {
   "start" : "Start",
-  "exit" : "EXIT",
+  "exit" : "exit",
   "sunsets" : "Sunsets",
   "statistics" : "Statistics",
   "planet" : "Planet",
   "resources": "Resources",
-  "date" : "Date"
+  "date" : "Date",
+  "data_not_found" : "Data not found",
+  "mission" : "Mission",
+  "sp" : "sp",
+  "yes" : "yes",
+  "no" : "no",
+  "player1" : "player 1",
+  "player2" : "player 2",
+  "player3" : "player 3",
+  "player4" : "player 4",
+  "total" : "total",
+  "mission_time" : "Mission time (min)",
+  "unit_of_resource" : "unit of res\nin 10 min"
 }

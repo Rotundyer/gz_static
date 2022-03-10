@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../assets/CustomColors.dart';
+import '../../assets/CustomColors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
       shadowColor: CustomColors.black_50,
       title: TextButton(
         child: Text(
-          AppLocalizations.of(context)!.exit,
+          AppLocalizations.of(context)!.exit.toUpperCase(),
           style: const TextStyle(
             fontSize: 24,
             color: CustomColors.light_purple,
@@ -42,9 +42,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
         },
       ),
       leading: Padding(
-        padding: const EdgeInsets.only(left: 25, top: 15, bottom: 15),
+        padding: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
         child: IconButton(
-          icon: Image.asset('assets/images/arrow_left.png'),
+          icon: const Icon(CupertinoIcons.back, color: CustomColors.black, size: 35),
           iconSize: 55,
           onPressed: () => Navigator.pop(context),
         ),

@@ -1,12 +1,12 @@
-import 'dart:math';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gz_static/units/units.dart';
 
+import '../api/models/sunset_model.dart';
+import '../api/repository/main_rep.dart';
 import '../assets/CustomColors.dart';
-import '../repository/sunsets_rep.dart';
-import 'app_bar.dart';
+import 'widgets/app_bar.dart';
 
 class Sunsets extends StatefulWidget {
   const Sunsets({Key? key}) : super(key: key);
@@ -16,12 +16,12 @@ class Sunsets extends StatefulWidget {
 }
 
 class _SunsetsState extends State<Sunsets> {
-  late Future<Record> futureRecord;
+  late Future<RecordSunsets> futureRecord;
 
   @override
   void initState() {
     super.initState();
-    futureRecord = getRecordJson();
+    futureRecord = getRecordSunsetsJson();
     futureRecord.then((value) => null);
   }
 
@@ -30,14 +30,13 @@ class _SunsetsState extends State<Sunsets> {
     return Scaffold(
       backgroundColor: CustomColors.light_grey,
       appBar: const CustomAppBar(height: 70),
-      body: FutureBuilder<Record>(
+      body: FutureBuilder<RecordSunsets>(
         future: futureRecord,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
                 itemCount: snapshot.data!.sunset.length,
                 itemBuilder: (context, position) {
-                  print(snapshot.data!.sunset[position].number);
                   return CardSunset(
                     planet: snapshot.data!.sunset[position].planet,
                     resources: snapshot.data!.sunset[position].resources,
@@ -46,7 +45,14 @@ class _SunsetsState extends State<Sunsets> {
                   );
                 });
           } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
+            return Center(
+                child: Text(
+              '${snapshot.error}',
+              style: const TextStyle(
+                  fontSize: 18,
+                  color: CustomColors.black,
+                  fontFamily: 'Nunito_bold'),
+            ));
           }
           return const Center(
             child: CircularProgressIndicator(
@@ -75,7 +81,11 @@ class CardSunset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () => Navigator.pushNamed(context, 'personal sunset'),
+        onTap: () => {
+              // context.read<MainProvider>().setNumber(number),
+              Navigator.pushNamed(context, 'personal sunset',
+                  arguments: {"number": number})
+            },
         child: Card(
             shadowColor: CustomColors.black_50,
             elevation: 1,
@@ -143,13 +153,12 @@ class CardSunset extends StatelessWidget {
                       thickness: 1,
                     ),
                     Container(
-                      margin: const EdgeInsets.only(right: 15, left: 10),
-                      child: Image.asset(
-                        "assets/images/arrow_right_purple.png",
-                        width: 16,
-                        height: 16,
-                      ),
-                    )
+                        margin: const EdgeInsets.only(right: 15, left: 10),
+                        child: const Icon(
+                          Icons.arrow_forward_ios,
+                          color: CustomColors.light_purple,
+                          size: 24,
+                        ))
                   ],
                 )
               ],

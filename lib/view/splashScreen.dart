@@ -4,14 +4,9 @@ import 'package:gz_static/units/units.dart';
 
 import '../assets/CustomColors.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,15 +16,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
                 stops: [
-              0.1,
-              0.3,
-              1
-            ],
+                  0.1,
+                  0.3,
+                  1
+                ],
                 colors: [
-              CustomColors.dark_purple,
-              CustomColors.light_purple,
-              CustomColors.turquoise
-            ])),
+                  CustomColors.dark_purple,
+                  CustomColors.light_purple,
+                  CustomColors.turquoise
+                ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
